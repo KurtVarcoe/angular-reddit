@@ -8,13 +8,14 @@ import { Article } from './article.model';
 })
 export class ArticleComponent implements OnInit {
   @HostBinding('attr.class') cssClass = 'row';
-  article: Article;
+  articles: Article[];
 
   constructor() {
-    this.article = new Article(
-      'Angular',
-      'http://angular.io',
-      10);
+    this.articles = [
+      new Article('Angular', 'http://angular.io', 3),
+      new Article('Fullstack', 'http://fullstack.io', 2),
+      new Article('Angular Homepage', 'http://angular.io', 1),
+    ];
    }
 
   voteUp(): boolean {
